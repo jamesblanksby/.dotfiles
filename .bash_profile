@@ -11,3 +11,6 @@ unset file
 
 # Autocorrect typos in path names when using cd
 shopt -s cdspell
+
+# Silence macOS default interactive shell message
+export BASH_SILENCE_DEPRECATION_WARNING=1
