@@ -20,14 +20,6 @@ To update, `cd` into your local `dotfiles` repository and then:
 ./bootstrap
 ```
 
-### 📁 Specify the `$PATH`
-
-`~/.path` will be sourced along with the other files. Here is an example of the file that adds `/usr/local/bin` to the `$PATH`:
-
-```bash
-export PATH="/usr/local/bin:$PATH"
-```
-
 ### 🍎 macOS defaults
 
 The bootstrap script will set personalised defaults, but if you need set it independently you can run:
@@ -50,4 +42,12 @@ The bootstrap script will install Yarn via Homebrew and the required packages fo
 
 ```bash
 ./yarn
+```
+
+### 📁 Specify the `$PATH`
+
+`~/.path` will be sourced along with the other files. Here is an example of the file that adds `/usr/local/bin` to the `$PATH`:
+
+```bash
+export PATH="/usr/local/bin:$PATH"
 ```
