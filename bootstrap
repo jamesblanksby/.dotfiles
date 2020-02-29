@@ -7,6 +7,7 @@ function execute() {
         --exclude ".DS_Store" \
         --exclude "README.md" \
         --exclude "store/" \
+        --exclude "bootstrap" \
         --exclude "macos" \
         --exclude "brew" \
         --exclude "yarn" \
