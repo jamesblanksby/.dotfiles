@@ -343,7 +343,7 @@ defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -stri
 # Disable inline attachments (just show the icons)
 defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 
-# Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
+# Copy email addresses as foo@example.com instead of Foo Bar <foo@example.com> in Mail.app
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
 
