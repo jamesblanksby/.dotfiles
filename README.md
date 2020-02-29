@@ -4,7 +4,7 @@
 
 ### ⚡️ Install
 
-Clone the repository onto local machine and run:
+Clone the repository onto your local machine and run:
 
 ```bash
 git clone https://github.com/jamesblanksby/dotfiles.git && cd dotfiles && source bootstrap
@@ -30,7 +30,7 @@ export PATH="/usr/local/bin:$PATH"
 
 ### 🍎 macOS defaults
 
-The bootstrap script will set personalised defaults but if you need set it independently you can run:
+The bootstrap script will set personalised defaults, but if you need set it independently you can run:
 
 ```bash
 ./macos
@@ -46,7 +46,7 @@ The bootstrap script will install Homebrew and commonly used formulae but if you
 
 ### 🧶 Yarn package manager
 
-The bootstrap script will install Yarn via Homebrew and the required packages for development but you you need to reinstall separately you can run:
+The bootstrap script will install Yarn via Homebrew and the required packages for development but if you need to reinstall separately you can run:
 
 ```bash
 ./yarn
