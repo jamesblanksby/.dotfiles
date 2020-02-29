@@ -19,7 +19,10 @@ alias l="ls -lhF ${colorflag}"
 alias la="ls -lahF ${colorflag}"
 
 # List only directories
-alias ld="ls -lhF ${colorflag} | grep --color=never '^d'"
+alias ld="ls -lhF ${colorflag}"
+
+# Always use color output for ls
+alias ls="command ls ${colorflag}"
 
 # Better copy for bulk or large files
 alias cpp="rsync -aHXxv --numeric-ids --no-inc-recursive --info=progress2 -e 'ssh -T -o Compression=no -x'"
