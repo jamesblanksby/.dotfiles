@@ -11,14 +11,16 @@ function execute() {
         --exclude "yarn" \
         . ~
     source ~/.bash_profile
-    ./macos
     ./brew
     ./yarn
+    ./macos
 }
 
-git pull origin master
+# Ask for the administrator password upfront
+sudo -v
 
-cd ~/Downloads
+# Keep-alive: update existing sudo timestamp until bootstrap has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) "
 echo ""
