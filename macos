@@ -292,11 +292,12 @@ defaults write com.apple.terminal StringEncodings -array 4
 osascript <<EOD
 
 tell application "Terminal"
-    local windowId
     local windowAll
     local windowInitial
+    local windowID
 
     set themeName to "Toy Chest"
+    set scriptDir to (path to me as string)
 
     (* Store the IDs of all the open terminal windows. *)
     set windowInitial to id of every window
@@ -304,7 +305,7 @@ tell application "Terminal"
     (* Open the custom theme so that it gets added to the list
        of available terminal themes (note: this will open two
        additional terminal windows). *)
-    do shell script "open '$HOME/store/" & themeName & ".terminal'"
+    do shell script "open 'store/" & themeName & ".terminal'"
 
     (* Wait a little bit to ensure that the custom theme is added. *)
     delay 1
@@ -315,19 +316,17 @@ tell application "Terminal"
     (* Get the IDs of all the currently opened terminal windows. *)
     set windowAll to id of every window
 
-    repeat with windowID in allOpenedWindows
+    repeat with windowID in windowAll
         (* Close the additional windows that were opened in order
            to add the custom theme to the list of terminal themes. *)
         if windowInitial does not contain windowID then
             close (every window whose id is windowID)
-
-        (* Change the theme for the initial opened terminal windows
+            (* Change the theme for the initial opened terminal windows
            to remove the need to close them in order for the custom
            theme to be applied. *)
         else
             set current settings of tabs of (every window whose id is windowID) to settings set themeName
-        endif
-
+        end if
     end repeat
 end tell
 
