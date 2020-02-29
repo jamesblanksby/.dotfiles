@@ -17,7 +17,7 @@ The bootstrap script will pull in the latest version and copy the files to your 
 To update, `cd` into your local `dotfiles` repository and then:
 
 ```bash
-source bootstrap
+./bootstrap
 ```
 
 ### 📁 Specify the `$PATH`
