@@ -22,7 +22,7 @@ To update, `cd` into your local `dotfiles` repository and then:
 
 ### 🍎 macOS defaults
 
-The bootstrap script will set personalised defaults, but if you need set it independently you can run:
+Set personalised defaults, run the following:
 
 ```bash
 ./macos
@@ -30,7 +30,7 @@ The bootstrap script will set personalised defaults, but if you need set it inde
 
 ### 🍺 Homebrew formulae
 
-The bootstrap script will install Homebrew and commonly used formulae but if you need to reinstall separately you can run:
+Install Homebrew and commonly used formulae, run the following:
 
 ```bash
 ./brew
@@ -38,8 +38,7 @@ The bootstrap script will install Homebrew and commonly used formulae but if you
 
 ### 🧶 Yarn package manager
 
-The bootstrap script will install Yarn via Homebrew and the required packages for development but if you need to reinstall separately you can run:
-
+Install Yarn via Homebrew and the required packages for development, run the following:
 ```bash
 ./yarn
 ```

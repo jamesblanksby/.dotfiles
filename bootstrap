@@ -13,9 +13,6 @@ function execute() {
         --exclude "yarn" \
         . ~
     source ~/.bash_profile
-    ./brew
-    ./yarn
-    ./macos
 }
 
 # Ask for the administrator password upfront
