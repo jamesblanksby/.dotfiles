@@ -46,6 +46,7 @@ brew install rsync
 brew install iperf
 brew install wget
 brew install sqlite
+brew install ffmpeg
 
 # Remove old versions of installed formula
 brew cleanup
