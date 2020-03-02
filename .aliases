@@ -19,7 +19,7 @@ alias l="ls -lhF ${colorflag}"
 alias la="ls -lahF ${colorflag}"
 
 # List only directories
-alias ld="ls -lhF ${colorflag}"
+alias ld="ls -ldhF ${colorflag}"
 
 # Always use color output for ls
 alias ls="command ls ${colorflag}"
