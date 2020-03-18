@@ -7,7 +7,7 @@
 Clone the repository onto your local machine and run:
 
 ```bash
-git clone https://github.com/jamesblanksby/dotfiles.git && cd dotfiles && source bootstrap
+git clone https://github.com/jamesblanksby/dotfiles.git && cd dotfiles && ./bootstrap
 ```
 
 The bootstrap script will pull in the latest version and copy the files to your home folder.
