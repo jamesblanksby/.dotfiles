@@ -35,8 +35,7 @@ fi;
 chsh -s "${BREW_PREFIX}/bin/bash";
 
 # Install development tools
-brew install docker
-brew install docker-compose
+brew cask install docker
 brew install mysql
 brew install composer
 brew install node
