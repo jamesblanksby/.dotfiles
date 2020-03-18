@@ -26,11 +26,13 @@ BREW_PREFIX=$(brew --prefix)
 brew install bash
 brew install bash-completion2
 
-# Switch to using Homebrew installed Bash as default shell
+# Added Homebrew Bash shell to available shells
 if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
     echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
-    chsh -s "${BREW_PREFIX}/bin/bash";
 fi;
+
+# Switch to using Homebrew installed Bash as default shell
+chsh -s "${BREW_PREFIX}/bin/bash";
 
 # Install development tools
 brew install docker
