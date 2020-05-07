@@ -13,13 +13,13 @@ else # macOS ls
 fi
 
 # List files with human sizes
-alias l="ls -lhF ${colorflag}"
+alias l="ls -lh ${colorflag}"
 
 # List all files with human sizes
-alias la="ls -lahF ${colorflag}"
+alias la="ls -lha ${colorflag}"
 
 # List only directories
-alias ld="ls -ldhF ${colorflag}"
+alias ld="ls -lhd ${colorflag} */"
 
 # Always use color output for ls
 alias ls="command ls ${colorflag}"
