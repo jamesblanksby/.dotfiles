@@ -4,6 +4,9 @@
 
 ### ⚡️ Install
 
+⚠️ **Use with caution**\
+The bootstrap script will copy the latest version into your home folder overwriting any existing files in the process.
+
 Clone the repository onto your local machine and run:
 
 ```bash
