@@ -8,7 +8,7 @@ These are **my** personalised defaults for macOS and Ubuntu – please review th
 
 ⚠️ **Use with caution** – the bootstrap script will copy the latest version into your home folder overwriting any existing files in the process.
 
-Run the following to install on your local machine and run:
+Run the following to install on your machine:
 
 ```bash
 git clone https://github.com/jamesblanksby/dotfiles.git && cd dotfiles && ./bootstrap
