@@ -6,16 +6,13 @@ These are **my** personalised defaults for macOS and Ubuntu – please review th
 
 ### ⚡️ Install
 
-⚠️ **Use with caution**\
-The bootstrap script will copy the latest version into your home folder overwriting any existing files in the process.
+⚠️ **Use with caution** – the bootstrap script will copy the latest version into your home folder overwriting any existing files in the process.
 
-Clone the repository onto your local machine and run:
+Run the following to install on your local machine and run:
 
 ```bash
 git clone https://github.com/jamesblanksby/dotfiles.git && cd dotfiles && ./bootstrap
 ```
-
-The bootstrap script will pull in the latest version and copy the files to your home folder.
 
 ### 💎 Update
 
