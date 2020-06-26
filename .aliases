@@ -50,4 +50,4 @@ alias prikey="more ~/.ssh/id_rsa | pbcopy -selection clipboard | echo '=> Privat
 alias gulp="gulp --silent"
 
 # Print each PATH entry on a separate line
-alias path="echo -e ${PATH//:/\\n}"
+alias path="echo -e '${PATH//:/\\n}'"
