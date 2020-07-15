@@ -403,7 +403,8 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 ## CALENDAR ##
 
-# @TODO set default zoom level to -2
+# Sset default zoom level to -2
+defaults write com.apple.iCal CalUICanvasOccurrenceFontSize -int 10
 
 
 ## MESSAGES ##
