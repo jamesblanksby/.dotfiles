@@ -8,3 +8,8 @@ unset file
 
 # Autocorrect typos in path names when using cd
 shopt -s cdspell
+
+# Start terminal in server directory when not in VS Code
+if [[ "$TERM_PROGRAM" != "vscode" ]]; then
+    cd /Volumes/Data/Server
+fi
