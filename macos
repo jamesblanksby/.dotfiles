@@ -68,9 +68,8 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.scaling 5
 
 # Set language and text format
-defaults write NSGlobalDomain AppleLanguages -array "en"
-defaults write NSGlobalDomain AppleLocale -string "en_GB@currency=GBP"
-defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+defaults write NSGlobalDomain AppleLanguages -array "en-GB"
+defaults write NSGlobalDomain AppleLocale -string "en_GB"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
 # Set the timezone
