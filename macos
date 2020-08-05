@@ -431,20 +431,20 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 ## KILL AFFECTED APPLICATIONS ##
 
 for app in "Activity Monitor" \
-    "cfprefsd" \
-    "SystemUIServer" \
-    "Dock" \
-    "Spotlight" \
-    "Finder" \
-    "Terminal" \
-    "Mail" \
-    "Google Chrome" \
-    "TextEdit" \
-    "QuickTime Player" \
     "App Store" \
-    "Photos" \
+    "Calendar" \
+    "cfprefsd" \
+    "Dock" \
+    "Finder" \
+    "Google Chrome" \
+    "Mail" \
     "Messages" \
-    "Calendar"; do 
+    "Photos" \
+    "QuickTime Player" \
+    "Spotlight" \
+    "SystemUIServer" \
+    "Terminal" \
+    "TextEdit"; do 
         killall "${app}" &> /dev/null
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
