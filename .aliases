@@ -51,3 +51,6 @@ alias gulp="gulp --silent"
 
 # Print each PATH entry on a separate line
 alias path="echo -e '${PATH//:/\\n}'"
+
+# Fix issues with iOS device charge loop
+alias charge="sudo killall -STOP -c usbd"
