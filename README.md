@@ -19,7 +19,7 @@ git clone https://github.com/jamesblanksby/dotfiles.git && cd dotfiles && ./boot
 To update, `cd` into your local `dotfiles` repository and then:
 
 ```bash
-./bootstrap
+git pull && ./bootstrap
 ```
 
 ### 🍎 macOS defaults
