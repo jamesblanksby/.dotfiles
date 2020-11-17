@@ -10,6 +10,6 @@ unset file
 shopt -s cdspell
 
 # Start terminal in server directory when not in VS Code
-if [[ "$TERM_PROGRAM" != "vscode" ]]; then
+if [[ "$OSTYPE" == "darwin"* ]] && [[ "$TERM_PROGRAM" != "vscode" ]]; then
     cd /Volumes/Data/Server
 fi
