@@ -9,7 +9,8 @@ unset file
 # Autocorrect typos in path names when using cd
 shopt -s cdspell
 
-# Start terminal in server directory when not in VS Code
-if [[ "$OSTYPE" == "darwin"* ]] && [[ "$TERM_PROGRAM" != "vscode" ]]; then
-    cd /Volumes/Data/Server
+# Start terminal in Server directory when not in VS Code and using Mac OS
+directory='/Volumes/Data/Server'
+if [[ "$OSTYPE" == "darwin"* ]] && [[ "$TERM_PROGRAM" != "vscode" ]] && [[ -d "$directory" ]]; then
+    cd "$directory"
 fi
