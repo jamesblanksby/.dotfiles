@@ -1,10 +1,10 @@
-# Wishlist
+# 🧞‍♂️ Wishlist
 
-## Applications
+## 💻 Applications
 Automated installation of the following:
 * [slate](https://github.com/jigish/slate)
 
-## macOS Configuration
+## 🍎 macOS Configuration
 * Finder list view
 * Finder font size
 * Desktop sort by kind
