@@ -1,6 +1,6 @@
 # 🔧 dotfiles
 
-These are **my** personalised defaults for macOS and Ubuntu – please review the code accordingly before installing.
+These are **MY** personalised defaults for macOS and Linux – please review the code accordingly before installing.
 
 ## Usage
 
