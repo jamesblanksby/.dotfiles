@@ -15,7 +15,7 @@ layout.video = slate.layout('video', {
         operations: [slate.operation('move', {
             x: 'screenOriginX',
             y: 'screenOriginY',
-            width: 'floor(screenSizeX * 0.715)',
+            width: '(screenSizeX * 0.715)',
             height: 'screenSizeY',
         }),],
     },
