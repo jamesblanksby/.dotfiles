@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+V#!/usr/bin/env bash
 
 # Prevent sudo ignoring aliases
 alias sudo="sudo"
@@ -54,3 +54,6 @@ alias path="echo -e '${PATH//:/\\n}'"
 
 # Fix issues with iOS device charge loop
 alias fixusb="sudo killall -STOP -c usbd"
+
+# Recreate all Docker containers
+alias docker-compose-recreate="docker-compose down && docker-compose up -d"
