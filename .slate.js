@@ -15,15 +15,15 @@ layout.video = slate.layout('video', {
         operations: [slate.operation('move', {
             x: 'screenOriginX',
             y: 'screenOriginY',
-            width: 'floor(screenSizeX * 0.7)',
+            width: '(screenSizeX * 0.715)',
             height: 'screenSizeY',
         }),],
     },
     'Messages': {
         operations: [slate.operation('move', {
-            x: '(screenOriginX + (screenSizeX * 0.7))',
+            x: '(screenOriginX + (screenSizeX * 0.715))',
             y: 'screenOriginY',
-            width: '(screenSizeX * 0.3)',
+            width: '(screenSizeX * 0.275)',
             height: 'screenSizeY',
         }),],
     },
