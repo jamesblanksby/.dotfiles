@@ -1,4 +1,4 @@
-# 🔧 dotfiles
+# 💻 dotfiles
 
 These are **MY** personalised defaults for macOS and Linux – please review the code accordingly before installing.
 
