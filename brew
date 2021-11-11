@@ -41,6 +41,13 @@ brew install composer
 brew install node
 brew install yarn
 
+# Install GPG tools
+brew install gnupg
+brew install pinentry-mac
+
+# Setup GPG to use pinentry
+mkdir -m 700 -p ~/.gnupg && echo "pinentry-program ${BREW_PREFIX}/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf && killall gpg-agent
+
 # Install other useful binaries
 brew install git
 brew install git-lfs
