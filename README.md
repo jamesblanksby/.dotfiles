@@ -11,7 +11,7 @@ These are **MY** personalised defaults for macOS and Linux – please review the
 Run the following to install on your machine:
 
 ```bash
-git clone https://github.com/jamesblanksby/dotfiles.git && cd dotfiles && ./bootstrap
+git clone https://github.com/jamesblanksby/.dotfiles.git && cd .dotfiles && ./bootstrap
 ```
 
 ### 💎 Update
