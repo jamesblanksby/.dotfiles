@@ -9,6 +9,13 @@ sudo -v
 # Keep-alive: update existing sudo timestamp until macos has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+# Check whether Terminal has Full Disk Access
+if [[ ! -r "/Library/Application Support/com.apple.TCC/TCC.db" ]]; then
+    echo "Full Disk Access must be granted to Terminal in order to run this script."
+    open "x-apple.systempreferences:com.apple.preference.security?Privacy"
+    exit
+fi
+
 
 ## GENERAL UI/UX ##
 
