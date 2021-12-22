@@ -309,5 +309,4 @@ defaults write com.apple.iCal CalUICanvasOccurrenceFontSize -int 10
 
 
 
-echo "Complete. Restarting in 10 seconds to allow changes to take effect."
-sudo shutdown -h +10
+echo "Complete. Restart now to for changes to take effect."
