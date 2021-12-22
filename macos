@@ -70,13 +70,13 @@ defaults write -g com.apple.mouse.scaling 5
 ## ENERGY SAVING ##
 
 # Enable lid wakeup
-sudo pmset -a lidwake 1
+sudo pmset -a lidwake 1 &> /dev/null
 
 # Restart automatically on power loss
-sudo pmset -a autorestart 1
+sudo pmset -a autorestart 1 &> /dev/null
 
 # Sleep the display after 15 minutes
-sudo pmset -a displaysleep 15
+sudo pmset -a displaysleep 15 &> /dev/null
 
 # Disable machine sleep while charging
 sudo pmset -c sleep 0 &> /dev/null
@@ -85,13 +85,13 @@ sudo pmset -c sleep 0 &> /dev/null
 sudo pmset -b sleep 5 &> /dev/null
 
 # Set standby delay to 24 hours (default is 1 hour)
-sudo pmset -a standbydelay 86400
+sudo pmset -a standbydelay 86400 &> /dev/null
 
 # Never go into computer sleep mode
-sudo systemsetup -setcomputersleep Off > /dev/null
+sudo systemsetup -setcomputersleep off &> /dev/null
 
 # Restart automatically if the computer freezes
-sudo systemsetup -setrestartfreeze on
+sudo systemsetup -setrestartfreeze on &> /dev/null
 
 
 ## DOCK AND HOT CORNERS ##
