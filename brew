@@ -26,7 +26,7 @@ BREW_PREFIX=$(brew --prefix)
 brew install bash
 brew install bash-completion2
 
-# Added Homebrew Bash shell to available shells
+# Add Homebrew Bash to available shells
 if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
     echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
 fi;
