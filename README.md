@@ -6,7 +6,7 @@ These are **MY** personalised defaults for macOS and Linux – please review the
 
 ### ⚡️ Install
 
-⚠️ **Use with caution** – the bootstrap script will copy the latest version into your home directory overwriting any existing files in the process.
+⚠️ **Use with caution** – the bootstrap script will copy the latest version into your home directory overwriting any existing files in the process.
 
 Run the following to install on your machine:
 
