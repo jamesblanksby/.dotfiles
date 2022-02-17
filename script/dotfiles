@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Move user dotfiles
+
+echo "> Moving user dotfiles"
+
+# rsync -aqh \
+#     --no-perms \
+#     --exclude ".DS_Store" \
+#     --exclude ".git/" \
+#     "./.??*" "$HOME"

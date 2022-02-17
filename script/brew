@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+
+# Install command line tools via Homebrew
+
+echo "> Installing command line tools via Homebrew"
+
+# # Install Homebrew
+# if test ! "$(which brew)"; then
+#     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+#     if [[ "$(uname -m)" == "arm64" ]]; then
+#         eval "$(/opt/homebrew/bin/brew shellenv)"
+#     fi
+# fi
+
+# # Fetch the newest version
+# brew update
+
+# # Upgrade outdated formulae
+# brew upgrade
+
+# # Store Homebrew's install location
+# BREW_PREFIX="$(brew --prefix)"
+
+# # Install a modern version of Bash
+# brew install bash
+# brew install bash-completion@2
+
+# # Switch to using Homebrew installed Bash as default shell
+# if ! fgrep -q "${BREW_PREFIX}/bin/bash" "/etc/shells"; then
+#     echo "${BREW_PREFIX}/bin/bash" | sudo tee -a "/etc/shells"
+#     chsh -s "${BREW_PREFIX}/bin/bash"
+# fi;
+
+# # Install GPG tools
+# brew install gnupg
+# brew install pinentry-mac
+
+# # Setup GPG to use pinentry
+# mkdir -m 700 -p "$HOME/.gnupg" \
+#     && echo "pinentry-program ${BREW_PREFIX}/bin/pinentry-mac" > "$HOME/.gnupg/gpg-agent.conf" \
+#     && killall gpg-agent
+
+# # Install window manager
+# brew install --cask rectangle
+
+# # Install useful formulae
+# brew install git
+# brew install rsync
+# brew install wget
+# brew install ffmpeg
+# brew install nano
+
+# # Validate developer setup
+# if [ "$SETUP" == "developer" ]; then
+#     # Install development tools
+#     brew install --cask docker
+#     brew install docker-compose
+#     brew install mysql@5.7 && brew link --force mysql@5.7
+#     brew install composer
+#     brew install node
+#     brew install yarn
+
+#     # Install useful formulae
+#     brew install git-lfs
+
+#     # Start required services
+#     brew services start mysql@5.7
+# fi
+
+# # Remove old versions of installed formula
+# brew cleanup

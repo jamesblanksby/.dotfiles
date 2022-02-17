@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Move executable binaries
+
+echo "> Moving executable binaries"
+
+# rsync -aqh \
+#     --no-perms \
+#     --chmod=+rwx \
+#     "./bin/developer/*" "/usr/local/bin/"

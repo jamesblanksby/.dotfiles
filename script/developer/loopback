@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# Install Docker container loopback
+
+echo "> Installing Docker container loopback"
+
+# # Loopback filename
+# filename="com.$USER.loopback.plist"
+
+# # Loopback source/target file paths
+# source="./storage/$filename"
+# target="/Library/LaunchDaemons/$filename"
+
+# # Check whether loopback exists
+# if [ ! -f $target ]; then
+#     # Add loopback to file system
+#     sudo cp "$source" "$target"
+
+#     # Set file ownership and launch daemon
+#     sudo chown root:wheel "$target" && sudo launchctl load "$target"
+# fi

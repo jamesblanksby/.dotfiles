@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# Capture script input
+domain=$1
+
+# Validate empty input
+if [[ -z $domain ]]; then 
+	echo "[ERRO] Empty domain input"
+	exit
+fi
+
+# Lookup domain "A" record
+ip=$(dig +short $domain | tail -n1)
+
+# Check lookup was successful
+if [[ -z $ip ]]; then 
+	echo "[ERRO] No reply from server"
+	exit
+fi
+
+# Attempt to get IP hostname
+hostname=$(ssh -q -o ConnectTimeout=1 -o ConnectionAttempts=1 root@$ip hostname)
+
+# Output results
+echo "[ IP ]" $ip
+if [[ ! -z $hostname ]]; then 
+	echo "[HOST]" $hostname
+fi
+
+exit

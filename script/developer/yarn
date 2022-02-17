@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Install command line tools via Yarn
+
+echo "> Installing command line tools via Yarn"
+
+# # Upgrade packages to their latest version
+# yarn upgrade
+
+# # Install Gulp globally
+# yarn global add gulp

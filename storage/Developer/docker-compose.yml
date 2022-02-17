@@ -1,0 +1,11 @@
+version: "3"
+services:
+  server:
+    build: .
+    image: server
+    restart: unless-stopped
+    ports:
+      - 80:80
+    volumes:
+      - $PWD:/var/www/html
+    container_name: server
