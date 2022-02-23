@@ -217,6 +217,7 @@
         "animation-delay",
         "animation-duration",
         "animation-iteration-count",
+        "animation-direction",
         "animation-play-state",
         "animation-timing-function",
         "animation-fill-mode",
