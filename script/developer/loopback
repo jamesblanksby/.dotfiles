@@ -5,7 +5,7 @@
 echo "> Installing Docker container loopback"
 
 # # Loopback filename
-# filename="com.$USER.loopback.plist"
+# filename="com.jamesblanksby.loopback.plist"
 
 # # Loopback source/target file paths
 # source="./storage/$filename"
