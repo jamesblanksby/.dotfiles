@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Move configuration files
+
+echo "> Moving configuration files"
+
+cp ./config/developer/my.cnf /usr/local/etc/my.cnf
