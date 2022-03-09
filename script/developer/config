@@ -4,4 +4,4 @@
 
 echo "> Moving configuration files"
 
-cp ./config/developer/my.cnf /usr/local/etc/my.cnf
+# cp ./config/developer/my.cnf $([ -d "/opt/homebrew/etc" ] && echo "/opt/homebrew/etc/my.cnf" || echo "/usr/local/etc/my.cnf")
