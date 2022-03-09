@@ -6,6 +6,8 @@ services:
     restart: unless-stopped
     ports:
       - 80:80
+    environment:
+      - DOCKER=true
     volumes:
       - $PWD:/var/www/html
     container_name: server
