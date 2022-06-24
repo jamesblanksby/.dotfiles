@@ -335,4 +335,4 @@ defaults write com.apple.iCal CalUICanvasOccurrenceFontSize -int 10
 
 divider
 
-echo "✅ MacOS complete – restart now for changes to take effect"
+echo "✅ MacOS complete – restart for changes to take effect"
