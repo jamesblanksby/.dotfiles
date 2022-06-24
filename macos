@@ -111,6 +111,9 @@ echo "> Dock and Hot Corners"
 
 # Dock and Hot Corners
 
+# Purge default Dock applications
+defaults write com.apple.dock persistent-apps -array
+
 # Set the icon size of Dock items
 defaults write com.apple.dock tilesize -int 40
 defaults write com.apple.Dock size-immutable -bool true
