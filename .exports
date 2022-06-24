@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-# Silence macOS default interactive shell message
-export BASH_SILENCE_DEPRECATION_WARNING=1

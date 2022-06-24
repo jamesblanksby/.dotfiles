@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-# Install command line tools using Yarn
-
-# Upgrade packages to their latest version
-yarn upgrade
-
-# Install Gulp globally
-yarn global add gulp
