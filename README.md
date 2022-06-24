@@ -8,9 +8,9 @@ These are **my** personalised defaults – please review the code accordingly be
 
 ### ⚡️ Install
 
-⚠️ **Use with caution** ⚠️
-
 The bootstrap script will copy the latest version into your home directory overwriting any existing files in the process.
+
+⚠️ **Use with caution** ⚠️
 
 Run the following to install on your machine:
 
