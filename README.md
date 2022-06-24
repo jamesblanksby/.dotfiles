@@ -1,6 +1,6 @@
 # 💻 .dotfiles
 
-A collection of bootstrap dotfiles and personalised macOS/Linux defaults.
+A collection of setup dotfiles and personalised macOS/Linux defaults.
 
 These are **my** personalised defaults – please review the code accordingly before installing.
 
@@ -8,14 +8,14 @@ These are **my** personalised defaults – please review the code accordingly be
 
 ### ⚡️ Install
 
-The bootstrap script will copy the latest version into your home directory overwriting any existing files in the process.
+The setup script will copy the latest version into your home directory overwriting any existing files in the process.
 
 ⚠️ **Use with caution** ⚠️
 
 Run the following to install on your machine:
 
 ```bash
-git clone https://github.com/jamesblanksby/.dotfiles.git && cd .dotfiles && ./bootstrap
+git clone https://github.com/jamesblanksby/.dotfiles.git && cd .dotfiles && ./setup
 ```
 
 ### 💎 Update
@@ -23,7 +23,7 @@ git clone https://github.com/jamesblanksby/.dotfiles.git && cd .dotfiles && ./bo
 To update, `cd` into your local `.dotfiles` repository and then:
 
 ```bash
-git pull && ./bootstrap
+git pull && ./setup
 ```
 
 ### 🍎 macOS defaults
