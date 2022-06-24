@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+# Shell colors
+RUBY="\e[1;31m"
+BLUE="\e[1;34m"
+GOLD="\e[1;33m"
+
+# Shell attribute reset 
+RESET="\e[0m"
+
+PS1=""
+
+# Show user when logged in as root
+if [[ "${USER}" == "root" ]]; then
+    PS1="$PS1\[${RUBY}\]\u\[${RESET}\]" # username
+fi
+
+# Add @ when both root and logged in via SSH
+if [[ "${USER}" == "root" ]] && [[ "${SSH_TTY}" ]]; then
+    PS1="$PS1\[${RUBY}\]@\[${RESET}\]"
+fi
+
+# Show hostname when connected via SSH
+if [[ "${SSH_TTY}" ]]; then
+    PS1="$PS1\[${RUBY}\]\h\[${RESET}\]" # hostname
+fi
+
+# Working directory basename
+PS1="$PS1[\[${BLUE}\]\W\[${RESET}\]]"
+
+# PS1 suffix
+PS1="$PS1\[${GOLD}\]\$\[${RESET}\] "
+
+export PS1

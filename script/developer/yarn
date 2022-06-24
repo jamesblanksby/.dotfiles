@@ -4,8 +4,8 @@
 
 echo "> Installing command line tools via Yarn"
 
-# # Upgrade packages to their latest version
-# yarn upgrade
+# Upgrade packages to their latest version
+yarn upgrade
 
-# # Install Gulp globally
-# yarn global add gulp
+# Install Gulp globally
+yarn global add gulp

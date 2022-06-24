@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# Prevent sudo ignoring aliases
+alias sudo="sudo"
+
+# Super list
+alias l="ls -hlp --color"
+
+# Super list all
+alias la="ls -ahlp --color"
+
+# Directory list
+alias ld="ls -dhl --color */"
+
+# Alias native list as super list
+alias ls="l"
+
+# Copy plus for bulk and large files
+alias cpp="rsync -aHXxv --numeric-ids --no-inc-recursive --info=progress2 -e \"ssh -T -o Compression=no -x\""
+
+# IP addresses
+alias locip="ifconfig | grep inet | grep -v inet6 | awk \"{print $2}\""
+alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+# Flush DNS cache
+alias flushdns="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+
+# Quick edit hosts
+alias hosts="sudo nano /etc/hosts"
+
+# Execute gulp in silent mode
+alias gulp="[[ $(uname) == \"Darwin\" ]] && gulp --silent"
+
+# Print each PATH entry on a separate line
+alias path="echo -e \"${PATH//:/\\n}\""
+
+# Fix issues with iOS device charge loop
+alias fixusb="sudo killall -STOP -c usbd"

@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# Move executable binaries
+# Move developer executable binaries
 
-echo "> Moving executable binaries"
+echo "> Moving developer executable binaries"
 
-# rsync -aqh \
-#     --no-perms \
-#     --chmod=+rwx \
-#     "./bin/developer/*" "/usr/local/bin/"
+rsync -aqh \
+    --no-perms \
+    --chmod=+rwx \
+    "./bin/developer/*" "$HOME/bin/"

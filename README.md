@@ -2,7 +2,7 @@
 
 A collection of bootstrap dotfiles and personalised macOS/Linux defaults.
 
-These are **MY** personalised defaults – please review the code accordingly before installing.
+These are **my** personalised defaults – please review the code accordingly before installing.
 
 ## Usage
 
