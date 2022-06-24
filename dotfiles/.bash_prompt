@@ -12,23 +12,23 @@ PS1=""
 
 # Show user when logged in as root
 if [[ "${USER}" == "root" ]]; then
-    PS1="$PS1\[${RUBY}\]\u\[${RESET}\]" # username
+    PS1+="\[${RUBY}\]\u\[${RESET}\]" # username
 fi
 
 # Add @ when both root and logged in via SSH
 if [[ "${USER}" == "root" ]] && [[ "${SSH_TTY}" ]]; then
-    PS1="$PS1\[${RUBY}\]@\[${RESET}\]"
+    PS1+="\[${RUBY}\]@\[${RESET}\]"
 fi
 
 # Show hostname when connected via SSH
 if [[ "${SSH_TTY}" ]]; then
-    PS1="$PS1\[${RUBY}\]\h\[${RESET}\]" # hostname
+    PS1+="\[${RUBY}\]\h\[${RESET}\]" # hostname
 fi
 
 # Working directory basename
-PS1="$PS1[\[${BLUE}\]\W\[${RESET}\]]"
+PS1+="[\[${BLUE}\]\W\[${RESET}\]]"
 
 # PS1 suffix
-PS1="$PS1\[${GOLD}\]\$\[${RESET}\] "
+PS1+="\[${GOLD}\]\$\[${RESET}\] "
 
 export PS1
