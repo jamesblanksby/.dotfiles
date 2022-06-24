@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Create development server envrionment
+
+echo "> Creating development server envrionment"
+
+directory="$HOME/Developer"
+
+if [[ ! -d "$directory" ]]; then
+    mkdir "$directory"
+fi
+
+rsync -aqh \
+    --no-perms \
+    "./storage/Server/" "$directory/"

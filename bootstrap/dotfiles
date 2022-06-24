@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Move user dotfiles
+
+echo "> Moving user dotfiles"
+
+rsync -aqh \
+    --no-perms \
+    "./dotfiles/" "$HOME/"
