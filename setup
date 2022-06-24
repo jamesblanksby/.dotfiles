@@ -9,12 +9,12 @@ function execute() {
     divider
 
     # Bootstrap global scripts
-    for file in ./script/*; do
+    for file in ./bootstrap/*; do
         [ -f "$file" ] && source "$file"
     done
 
     # Bootstrap setup scripts
-    for file in ./script/$SETUP/*; do 
+    for file in ./bootstrap/$SETUP/*; do 
         [ -f "$file" ] && source "$file"
     done
 
