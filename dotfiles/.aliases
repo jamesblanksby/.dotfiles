@@ -19,7 +19,7 @@ alias ls="l"
 alias cpp="rsync -aHXxv --numeric-ids --no-inc-recursive --info=progress2 -e \"ssh -T -o Compression=no -x\""
 
 # IP addresses
-alias locip="ifconfig | grep inet | grep -v inet6 | awk \"{print $2}\""
+alias locip="ifconfig | grep inet | grep -v inet6 | awk '{print \$2}'"
 alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # Flush DNS cache
