@@ -1,0 +1,29 @@
+version: "3"
+name: "developer"
+services:
+  php-7:
+    build:
+      context: .
+      dockerfile: ./dockerfile/php-7
+    image: php-7
+    restart: unless-stopped
+    ports:
+      - 80:80
+    environment:
+      - DOCKER=true
+    volumes:
+      - ./../:/var/www/html
+    container_name: php-7
+  php-8:
+    build:
+      context: .
+      dockerfile: ./dockerfile/php-8
+    image: php-8
+    restart: unless-stopped
+    ports:
+      - 81:80
+    environment:
+      - DOCKER=true
+    volumes:
+      - ./../:/var/www/html
+    container_name: php-8
