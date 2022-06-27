@@ -7,8 +7,8 @@ unset file
 # Autocorrect cd typos
 shopt -s cdspell
 
-# Start terminal in Server directory when not in VS Code and using macOS
-directory="/Volumes/Data/Server"
+# Start terminal in Developer directory when not in VS Code and using macOS
+directory="$HOME/Developer"
 if [[ "$(uname)" == "Darwin" ]] && [[ "$TERM_PROGRAM" != "vscode" ]] && [[ -d "$directory" ]]; then
     cd "$directory"
 fi
