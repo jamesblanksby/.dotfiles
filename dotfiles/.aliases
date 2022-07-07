@@ -36,3 +36,6 @@ alias path="echo -e \"${PATH//:/\\n}\""
 
 # Fix issues with iOS device charge loop
 alias fixusb="sudo killall -STOP -c usbd"
+
+# Generate UUID and copy to clipboard
+alias uuid="uuidgen | tr \"A-Z\" \"a-z\" | tr -d \"\n\" | pbcopy && pbpaste && echo"
