@@ -1,35 +1,36 @@
 #!/usr/bin/env bash
 
+source $(dirname $0)/utility
+
 function execute() {
     echo "⚙️  Setting up a $SETUP system configuration:"
 
     divider
 
-    # Bootstrap global scripts
-    for file in ./bootstrap/*; do
-        [ -f "$file" ] && source "$file"
-    done
+    # Bootstrap scripts
+    bootstrap
 
-    # Bootstrap setup scripts
-    for file in ./bootstrap/$SETUP/*; do 
-        [ -f "$file" ] && source "$file"
-    done
+    # Add setup type export
+    echo -e "\n# Dotfiles setup type\nexport DOTFILES_SETUP=$SETUP" >> "$HOME/.exports"
 
     # Initialise profile
     source "$HOME/.bash_profile"
 
     # Success message
-    echo "✅ Setup complete"
+    echo "✅ Install complete"
 }
 
-function divider() {
-    printf "%*s\n" "${COLUMNS:-$(tput cols)}" "" | tr " " -
-}
+# Validate existing install
+if [[ -v $DOTFILES_SETUP ]]; then
+    echo "⛔️ Dotfiles already installed"
+
+    exit
+fi
 
 # Ask for the administrator password upfront
 sudo -v
 
-# Update existing sudo timestamp until setup has finished
+# Update existing sudo timestamp until install has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 divider

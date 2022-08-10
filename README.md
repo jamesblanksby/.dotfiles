@@ -15,15 +15,15 @@ The setup script will copy the latest version into your home directory overwriti
 Run the following to install on your machine:
 
 ```bash
-git clone https://github.com/jamesblanksby/.dotfiles.git && cd .dotfiles && ./setup
+git clone https://github.com/jamesblanksby/.dotfiles.git && cd .dotfiles && ./install
 ```
 
 ### 💎 Update
 
-To update, `cd` into your local `.dotfiles` repository and then:
+To update, from your local `.dotfiles` repository run:
 
 ```bash
-git pull && ./setup
+git pull && ./update
 ```
 
 ### 🍎 macOS defaults

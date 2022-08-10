@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+source $(dirname $0)/utility
+
+function execute() {
+    echo "⚙️  Updating $SETUP system configuration:"
+
+    divider
+
+    # Bootstrap scripts
+    bootstrap
+
+    # Initialise profile
+    source "$HOME/.bash_profile"
+
+    # Success message
+    echo "✅ Update complete"
+}
+
+# Validate existing install
+if [[ -z ${DOTFILES_SETUP+x} ]]; then
+    echo "⛔️ Dotfiles not installed"
+
+    exit
+fi
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Update existing sudo timestamp until install has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+# Setup type
+SETUP=$DOTFILES_SETUP
+
+divider
+
+# Overwrite file warning
+echo "⚠️  This will overwrite existing files in your home directory."
+read -p "Are you sure? (y/n): "
+
+divider
+
+# Validate positive reply
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    execute
+fi
+
+exit

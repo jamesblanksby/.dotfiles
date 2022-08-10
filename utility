@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+function divider() {
+    printf "%*s\n" "${COLUMNS:-$(tput cols)}" "" | tr " " -
+}
+
+function bootstrap() {
+    # Bootstrap global scripts
+    for file in ./bootstrap/*; do
+        [ -f "$file" ] && source "$file"
+    done
+
+    # Bootstrap setup scripts
+    for file in ./bootstrap/$SETUP/*; do 
+        [ -f "$file" ] && source "$file"
+    done
+}
