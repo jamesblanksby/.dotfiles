@@ -59,6 +59,8 @@
         "justify-items",
         "justify-content",
         "justify-self",
+        "place-items",
+        "place-content",
         "flex",
         "flex-align",
         "flex-basis",
