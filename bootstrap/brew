@@ -49,6 +49,7 @@ brew install rsync
 brew install wget
 brew install ffmpeg
 brew install nano
+brew install exiftool
 
 # Validate developer setup
 if [[ "$SETUP" == "developer" ]]; then
