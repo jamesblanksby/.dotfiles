@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-# Install command line tools via Homebrew
+# Process command line tools via Homebrew
 
-echo "> Installing command line tools via Homebrew"
+echo "> Processing command line tools via Homebrew"
 
 # Install Homebrew
 if test ! "$(which brew)"; then
@@ -21,7 +21,7 @@ brew upgrade
 # Store Homebrew's install location
 PREFIX="$(brew --prefix)"
 
-# Install a modern version of Bash
+# A modern version of Bash
 brew install bash
 brew install bash-completion@2
 
@@ -31,7 +31,7 @@ if ! fgrep -q "${PREFIX}/bin/bash" "/etc/shells"; then
     chsh -s "${PREFIX}/bin/bash"
 fi;
 
-# Install GPG tools
+# GPG tools
 brew install gnupg
 brew install pinentry-mac
 
@@ -40,10 +40,10 @@ mkdir -m 700 -p "$HOME/.gnupg" \
     && echo "pinentry-program ${PREFIX}/bin/pinentry-mac" > "$HOME/.gnupg/gpg-agent.conf" \
     && killall gpg-agent
 
-# Install window manager
+# Window manager
 brew install --cask rectangle
 
-# Install useful formulae
+# Useful formulae
 brew install git
 brew install rsync
 brew install wget
@@ -53,7 +53,7 @@ brew install exiftool
 
 # Validate developer setup
 if [[ "$SETUP" == "developer" ]]; then
-    # Install development tools
+    # Development tools
     brew install --cask docker
     brew install docker-compose
     brew install mysql@5.7 && brew link --force mysql@5.7
@@ -61,12 +61,12 @@ if [[ "$SETUP" == "developer" ]]; then
     brew install node
     brew install yarn
 
-    # Install useful formulae
+    # Useful formulae
     brew install git-lfs
 
     # Start required services
     brew services start mysql@5.7
 fi
 
-# Remove old versions of installed formula
+# Remove old versions of formula
 brew cleanup
