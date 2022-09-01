@@ -14,4 +14,10 @@ function bootstrap() {
     for file in ./bootstrap/$SETUP/*; do 
         [ -f "$file" ] && source "$file"
     done
+
+    # Add setup type export
+    echo -e "\n# Dotfiles setup type\nexport DOTFILES_SETUP=$SETUP" >> "$HOME/.exports"
+
+    # Initialise profile
+    source "$HOME/.bash_profile"
 }

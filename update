@@ -10,9 +10,6 @@ function execute() {
     # Bootstrap scripts
     bootstrap
 
-    # Initialise profile
-    source "$HOME/.bash_profile"
-
     # Success message
     echo "✅ Update complete"
 }

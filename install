@@ -10,12 +10,6 @@ function execute() {
     # Bootstrap scripts
     bootstrap
 
-    # Add setup type export
-    echo -e "\n# Dotfiles setup type\nexport DOTFILES_SETUP=$SETUP" >> "$HOME/.exports"
-
-    # Initialise profile
-    source "$HOME/.bash_profile"
-
     # Success message
     echo "✅ Install complete"
 }
