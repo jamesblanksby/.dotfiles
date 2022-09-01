@@ -8,3 +8,5 @@ rsync -aqh \
     --no-perms \
     --chmod=+rwx \
     "./bin/developer/" "$HOME/bin/"
+
+chflags hidden "$HOME/bin/"
