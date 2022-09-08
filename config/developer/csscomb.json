@@ -50,6 +50,9 @@
         "scroll-padding-right",
         "scroll-padding-bottom",
         "scroll-padding-left",
+        "overscroll-behavior",
+        "overscroll-behavior-x",
+        "overscroll-behavior-y".
         "clip",
         "clip-path",
         "clear",
