@@ -34,7 +34,7 @@ divider
 
 # Overwrite file warning
 echo "⚠️  This will overwrite existing files in your home directory."
-read -pr "Are you sure? (y/n): "
+read -rp "Are you sure? (y/n): "
 
 divider
 
