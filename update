@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source $(dirname $0)/utility
+source "$(dirname "$0")/utility"
 
 function execute() {
     echo "⚙️  Updating $SETUP system configuration:"
@@ -34,7 +34,7 @@ divider
 
 # Overwrite file warning
 echo "⚠️  This will overwrite existing files in your home directory."
-read -p "Are you sure? (y/n): "
+read -pr "Are you sure? (y/n): "
 
 divider
 

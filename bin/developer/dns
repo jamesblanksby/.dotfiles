@@ -10,7 +10,7 @@ if [[ -z $domain ]]; then
 fi
 
 # Lookup domain "A" record
-ip=$(dig +short $domain | tail -n1)
+ip=$(dig +short "$domain" | tail -n1)
 
 # Check lookup was successful
 if [[ -z $ip ]]; then 
@@ -19,12 +19,12 @@ if [[ -z $ip ]]; then
 fi
 
 # Attempt to get IP hostname
-hostname=$(ssh -q -o ConnectTimeout=1 -o ConnectionAttempts=1 root@$ip hostname)
+hostname=$(ssh -q -o ConnectTimeout=1 -o ConnectionAttempts=1 root@"$ip" hostname)
 
 # Output results
-echo "[ IP ]" $ip
-if [[ ! -z $hostname ]]; then 
-	echo "[HOST]" $hostname
+echo "[ IP ]" "$ip"
+if [[ -n $hostname ]]; then 
+	echo "[HOST]" "$hostname"
 fi
 
 exit

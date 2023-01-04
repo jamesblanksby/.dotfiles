@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+set -e
+set -o pipefail
+
+ERROR=()
+
+# shellcheck disable=SC2044
+for file in $(find . -type f -not -path "*.git*"); do
+    if [ ! -x "$file" ]; then
+        continue
+    fi
+	shellcheck -x "$file" || ERROR+=("$file")
+done
+
+echo "${#ERROR[@]}"
+
+if [ ${#ERROR[@]} -eq 0 ]; then
+	echo "✅ Tests complete"
+else
+	echo "⚠️  The following files failed testing:"
+    for error in "${ERROR[@]}"; do
+        echo "*" "$error"
+    done
+	exit 1
+fi
