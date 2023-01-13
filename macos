@@ -2,11 +2,7 @@
 
 source "$(dirname "$0")/utility"
 
-# Ask for the administrator password upfront
-sudo -v
-
-# Update existing sudo timestamp until bootstrap has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+superuser
 
 # Close any open System Preferences panes to prevent overriding
 osascript -e "tell application \"System Preferences\" to quit"
@@ -268,20 +264,6 @@ defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 
 # Copy email addresses as foo@example.com instead of Foo Bar <foo@example.com> in Mail.app
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
-
-echo "> Google Chrome"
-
-# Google Chrome
-
-# Disable sensitive backswipe
-defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
-defaults write com.google.Chrome AppleEnableMouseSwipeNavigateWithScrolls -bool false
-
-# Use the system-native print preview dialog
-defaults write com.google.Chrome DisablePrintPreview -bool true
-
-# Expand the print dialog by default
-defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 
 echo "> TextEdit"
 

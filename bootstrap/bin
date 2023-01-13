@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Move executable binaries
+
+echo "> Moving executable binaries"
+
+rsync -aqh \
+    --no-perms \
+    --chmod=+rwx \
+    "./bin/" "$HOME/bin/"
+
+chflags hidden "$HOME/bin/"

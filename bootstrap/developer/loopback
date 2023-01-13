@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-# Process Docker network loopback
+# Process developer Docker network loopback
 
-echo "> Processing Docker network loopback"
+echo "> Processing developer Docker network loopback"
 
 # Loopback filename
 filename="com.jamesblanksby.loopback.plist"
