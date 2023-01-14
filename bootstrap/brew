@@ -12,32 +12,32 @@ if test ! "$(which brew)"; then
     fi
 else
     # Fetch latest version
-    brew update
+    brew update --quiet
 
     # Upgrade outdated formulae
-    brew upgrade
+    brew upgrade --quiet
 fi
 
 # Homebrew's install location
 PREFIX="$(brew --prefix)"
 
 # Latest version of Bash
-brew install -quiet bash
-brew install -quiet bash-completion@2
+brew install --quiet bash
+brew install --quiet bash-completion@2
 
-# Switch to using Homebrew install -quieted Bash as default shell
+# Switch to using Homebrew installed Bash as default shell
 if ! fgrep -q "${PREFIX}/bin/bash" "/etc/shells"; then
     echo "${PREFIX}/bin/bash" | sudo tee -a "/etc/shells"
     chsh -s "${PREFIX}/bin/bash"
 fi;
 
 # Window manager
-brew install -quiet --cask rectangle
+brew install --quiet --cask rectangle
 
 # Useful formulae
-brew install -quiet git
-brew install -quiet rsync
-brew install -quiet wget
-brew install -quiet ffmpeg
-brew install -quiet nano
-brew install -quiet exiftool
+brew install --quiet git
+brew install --quiet rsync
+brew install --quiet wget
+brew install --quiet ffmpeg
+brew install --quiet nano
+brew install --quiet exiftool
