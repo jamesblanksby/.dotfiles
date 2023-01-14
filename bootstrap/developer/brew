@@ -8,8 +8,8 @@ echo "> Processing developer Homebrew formulae"
 PREFIX="$(brew --prefix)"
 
 # GPG tools
-brew install gnupg
-brew install pinentry-mac
+brew install -quiet gnupg
+brew install -quiet pinentry-mac
 
 # Setup GPG to use pinentry
 mkdir -m 700 -p "$HOME/.gnupg" \
@@ -17,16 +17,16 @@ mkdir -m 700 -p "$HOME/.gnupg" \
     && killall gpg-agent
 
 # Development tools
-brew install --cask docker
-brew install docker-compose
-brew install mysql@5.7 && brew link --force mysql@5.7
-brew install composer
-brew install node
-brew install yarn
+brew install -quiet --cask docker
+brew install -quiet docker-compose
+brew install -quiet mysql@5.7 && brew link --force mysql@5.7
+brew install -quiet composer
+brew install -quiet node
+brew install -quiet yarn
 
 # Useful formulae
-brew install shellcheck
-brew install git-lfs
+brew install -quiet shellcheck
+brew install -quiet git-lfs
 
 # Start required services
 brew services start mysql@5.7
