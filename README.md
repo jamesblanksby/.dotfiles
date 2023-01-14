@@ -10,12 +10,12 @@ These are **my** personalised defaults – please review the code accordingly be
 
 The setup script will copy the latest version into your home directory overwriting any existing files in the process.
 
-⚠️ **Use with caution** ⚠️
+⚠️ **Use with caution**
 
 Run the following to install on your machine:
 
 ```bash
-git clone https://github.com/jamesblanksby/.dotfiles.git && cd .dotfiles && ./install
+$ git clone https://github.com/jamesblanksby/.dotfiles.git && cd .dotfiles && ./install
 ```
 
 ### 💎 Update
@@ -23,7 +23,7 @@ git clone https://github.com/jamesblanksby/.dotfiles.git && cd .dotfiles && ./in
 To update, from your local `.dotfiles` repository run:
 
 ```bash
-git pull && ./update
+$ git pull && ./update
 ```
 
 ### 🍎 macOS defaults
@@ -31,5 +31,5 @@ git pull && ./update
 Set personalised defaults, run the following:
 
 ```bash
-./macos
+$ ./macos
 ```
