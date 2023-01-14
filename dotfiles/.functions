@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+function up() {
+    level=$1; 
+    if [ -z "${level}" ]; then
+        level=1
+    fi
+    for _ in $(seq 1 "${level}"); do
+        cd ../
+    done;
+}
