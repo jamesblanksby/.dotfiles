@@ -22,22 +22,22 @@ fi
 PREFIX="$(brew --prefix)"
 
 # Latest version of Bash
-brew install bash
-brew install bash-completion@2
+brew install -quiet bash
+brew install -quiet bash-completion@2
 
-# Switch to using Homebrew installed Bash as default shell
+# Switch to using Homebrew install -quieted Bash as default shell
 if ! fgrep -q "${PREFIX}/bin/bash" "/etc/shells"; then
     echo "${PREFIX}/bin/bash" | sudo tee -a "/etc/shells"
     chsh -s "${PREFIX}/bin/bash"
 fi;
 
 # Window manager
-brew install --cask rectangle
+brew install -quiet --cask rectangle
 
 # Useful formulae
-brew install git
-brew install rsync
-brew install wget
-brew install ffmpeg
-brew install nano
-brew install exiftool
+brew install -quiet git
+brew install -quiet rsync
+brew install -quiet wget
+brew install -quiet ffmpeg
+brew install -quiet nano
+brew install -quiet exiftool
