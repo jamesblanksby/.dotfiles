@@ -62,6 +62,7 @@ if [[ "$SETUP" == "developer" ]]; then
     brew install yarn
 
     # Useful formulae
+    brew install shellcheck
     brew install git-lfs
 
     # Start required services

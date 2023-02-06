@@ -33,7 +33,7 @@ divider
 echo "🛠️  What kind of setup do you want to create?"
 echo "1. Personal (default)"
 echo "2. Developer"
-read -pr "Option: " SETUP
+read -rp "Option: " SETUP
 
 # Validate setup type
 case $SETUP in
@@ -46,7 +46,7 @@ divider
 
 # Overwrite file warning
 echo "⚠️  This will overwrite existing files in your home directory."
-read -pr "Are you sure? (y/n): "
+read -rp "Are you sure? (y/n): "
 
 divider
 
