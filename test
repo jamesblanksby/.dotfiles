@@ -13,8 +13,6 @@ for file in $(find . -type f -not -path "*.git*"); do
 	shellcheck -x "$file" || ERROR+=("$file")
 done
 
-echo "${#ERROR[@]}"
-
 if [ ${#ERROR[@]} -eq 0 ]; then
 	echo "✅ Tests complete"
 else
