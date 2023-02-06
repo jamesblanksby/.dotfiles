@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-# Procesing command line tools via Yarn
+# Processing command line tools via Yarn
 
-echo "> Procesinging command line tools via Yarn"
+echo "> Processing command line tools via Yarn"
 
 # Upgrade packages to their latest version
 yarn upgrade
