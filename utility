@@ -1,16 +1,22 @@
 #!/usr/bin/env bash
 
+function superuser() {
+    # Keep sudo alive
+    sudo -v
+    while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+}
+
 function divider() {
     printf "%*s\n" "${COLUMNS:-$(tput cols)}" "" | tr " " -
 }
 
 function bootstrap() {
-    # Bootstrap global scripts
+    # Global scripts
     for file in ./bootstrap/*; do
         [ -f "$file" ] && source "$file"
     done
 
-    # Bootstrap setup scripts
+    # Setup scripts
     for file in ./bootstrap/$SETUP/*; do 
         [ -f "$file" ] && source "$file"
     done
@@ -18,6 +24,6 @@ function bootstrap() {
     # Add setup type export
     echo -e "\n# Dotfiles setup type\nexport DOTFILES_SETUP=$SETUP" >> "$HOME/.exports"
 
-    # Initialise profile
+    # Initialize profile
     source "$HOME/.bash_profile"
 }

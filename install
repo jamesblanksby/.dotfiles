@@ -7,10 +7,8 @@ function execute() {
 
     divider
 
-    # Bootstrap scripts
     bootstrap
 
-    # Success message
     echo "✅ Install complete"
 }
 
@@ -21,11 +19,7 @@ if [[ -v $DOTFILES_SETUP ]]; then
     exit
 fi
 
-# Ask for the administrator password upfront
-sudo -v
-
-# Update existing sudo timestamp until install has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+superuser
 
 divider
 

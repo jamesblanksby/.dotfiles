@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-# Create development server envrionment
+# Create developer server envrionment
 
-echo "> Creating development server envrionment"
+echo "> Creating developer server envrionment"
 
 directory="$HOME/Developer"
 

@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-# Processing command line tools via Yarn
+# Process developer cli tools
 
-echo "> Processing command line tools via Yarn"
+echo "> Processing developer cli tools"
 
 # Upgrade packages to their latest version
 yarn upgrade
 
-# Add Gulp globally
+# Global packages
 yarn global add gulp

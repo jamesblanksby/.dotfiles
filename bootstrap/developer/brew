@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# Process Homebrew formulae
+
+echo "> Processing developer Homebrew formulae"
+
+# Homebrew's install location
+PREFIX="$(brew --prefix)"
+
+# GPG tools
+brew install gnupg
+brew install pinentry-mac
+
+# Setup GPG to use pinentry
+mkdir -m 700 -p "$HOME/.gnupg" \
+    && echo "pinentry-program ${PREFIX}/bin/pinentry-mac" > "$HOME/.gnupg/gpg-agent.conf" \
+    && killall gpg-agent
+
+# Development tools
+brew install --cask docker
+brew install docker-compose
+brew install mysql@5.7 && brew link --force mysql@5.7
+brew install composer
+brew install node
+brew install yarn
+
+# Useful formulae
+brew install shellcheck
+brew install git-lfs
+
+# Start required services
+brew services start mysql@5.7

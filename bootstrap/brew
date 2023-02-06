@@ -1,27 +1,27 @@
 #!/usr/bin/env bash
 
-# Process command line tools via Homebrew
+# Process Homebrew formulae
 
-echo "> Processing command line tools via Homebrew"
+echo "> Processing Homebrew formulae"
 
-# Install Homebrew
 if test ! "$(which brew)"; then
+    # Install Homebrew
     echo | /bin/bash -c "$(curl -fLsS https://raw.githubusercontent.com/Homebrew/install/master/install.sh > /dev/null)"
     if [[ "$(uname -m)" == "arm64" ]]; then
         eval "$(/opt/homebrew/bin/brew shellenv)"
     fi
+else
+    # Fetch latest version
+    brew update
+
+    # Upgrade outdated formulae
+    brew upgrade
 fi
 
-# Fetch the newest version
-brew update
-
-# Upgrade outdated formulae
-brew upgrade
-
-# Store Homebrew's install location
+# Homebrew's install location
 PREFIX="$(brew --prefix)"
 
-# A modern version of Bash
+# Latest version of Bash
 brew install bash
 brew install bash-completion@2
 
@@ -30,15 +30,6 @@ if ! fgrep -q "${PREFIX}/bin/bash" "/etc/shells"; then
     echo "${PREFIX}/bin/bash" | sudo tee -a "/etc/shells"
     chsh -s "${PREFIX}/bin/bash"
 fi;
-
-# GPG tools
-brew install gnupg
-brew install pinentry-mac
-
-# Setup GPG to use pinentry
-mkdir -m 700 -p "$HOME/.gnupg" \
-    && echo "pinentry-program ${PREFIX}/bin/pinentry-mac" > "$HOME/.gnupg/gpg-agent.conf" \
-    && killall gpg-agent
 
 # Window manager
 brew install --cask rectangle
@@ -50,24 +41,3 @@ brew install wget
 brew install ffmpeg
 brew install nano
 brew install exiftool
-
-# Validate developer setup
-if [[ "$SETUP" == "developer" ]]; then
-    # Development tools
-    brew install --cask docker
-    brew install docker-compose
-    brew install mysql@5.7 && brew link --force mysql@5.7
-    brew install composer
-    brew install node
-    brew install yarn
-
-    # Useful formulae
-    brew install shellcheck
-    brew install git-lfs
-
-    # Start required services
-    brew services start mysql@5.7
-fi
-
-# Remove old versions of formula
-brew cleanup
