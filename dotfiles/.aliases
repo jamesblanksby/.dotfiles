@@ -7,19 +7,16 @@ alias sudo="sudo"
 alias l="ls -hlp --color"
 
 # Super list all
-alias la="ls -ahlp --color"
+alias la="ls -hlpa --color"
 
-# Directory list
-alias ld="ls -dhl --color */"
-
-# Alias native list as super list
-alias ls="l"
+# Super list directory
+alias ld="ls -hld --color */"
 
 # Quick edit hosts
 alias hosts="sudo nano /etc/hosts"
 
-# Execute gulp in silent mode
-alias gulp="[[ $(uname) == \"Darwin\" ]] && gulp --silent"
-
 # Print each PATH entry on a separate line
 alias path="echo -e \"${PATH//:/\\n}\""
+
+# Execute gulp in silent mode
+alias gulp="[[ $(uname) == \"Darwin\" ]] && gulp --silent"
