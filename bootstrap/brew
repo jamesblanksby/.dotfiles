@@ -6,9 +6,9 @@ echo "> Processing Homebrew formulae"
 
 if test ! "$(which brew)"; then
     # Install Homebrew
-    echo | /bin/bash -c "$(curl -fLsS https://raw.githubusercontent.com/Homebrew/install/master/install.sh > /dev/null)"
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fLsS https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     if [[ "$(uname -m)" == "arm64" ]]; then
-        eval "$(/opt/homebrew/bin/brew shellenv)"
+        echo "export PATH=\"/opt/homebrew/bin:\$PATH\";" >> "$HOME/.path"
     fi
 else
     # Fetch latest version
