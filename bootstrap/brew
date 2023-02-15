@@ -41,3 +41,4 @@ brew install --quiet wget
 brew install --quiet ffmpeg
 brew install --quiet nano
 brew install --quiet exiftool
+brew install --quiet imagemagick
