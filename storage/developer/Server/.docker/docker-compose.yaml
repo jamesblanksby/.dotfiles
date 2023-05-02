@@ -1,6 +1,26 @@
 version: "3"
 name: "developer"
 services:
+  webproxy:
+    image: nginxproxy/nginx-proxy
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./storage/webproxy/conf.d:/etc/nginx/conf.d
+      - certificate:/etc/nginx/certs:ro
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    container_name: developer.webproxy
+  certificate:
+    image: sebastienheyd/self-signed-proxy-companion
+    restart: unless-stopped
+    environment:
+      - NGINX_PROXY_CONTAINER=webproxy
+    volumes:
+      - certificate:/etc/nginx/certs:rw
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    container_name: developer.certificate
   php-7:
     build:
       context: .
@@ -8,12 +28,14 @@ services:
     image: php-7
     restart: unless-stopped
     ports:
-      - 80:80
+      - 59339:80
     environment:
       - DOCKER=true
+      - VIRTUAL_HOST=s
+      - VIRTUAL_PORT=80
     volumes:
       - ./../:/var/www/html
-    container_name: php-7
+    container_name: developer.php-7
   php-8:
     build:
       context: .
@@ -26,4 +48,11 @@ services:
       - DOCKER=true
     volumes:
       - ./../:/var/www/html
-    container_name: php-8
+    container_name: developer.php-8
+networks:
+  default:
+    name: webproxy
+    external: true
+volumes:
+  certificate:
+    name: developer.certificate
