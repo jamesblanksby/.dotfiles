@@ -27,6 +27,7 @@ brew install --quiet yarn
 # Useful formulae
 brew install --quiet shellcheck
 brew install --quiet git-lfs
+brew tap --quiet shopify/shopify && brew install --quiet shopify-cli
 
 # Start required services
 brew services start mysql@5.7

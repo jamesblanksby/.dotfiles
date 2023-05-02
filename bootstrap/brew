@@ -29,7 +29,7 @@ brew install --quiet bash-completion@2
 if ! fgrep -q "${PREFIX}/bin/bash" "/etc/shells"; then
     echo "${PREFIX}/bin/bash" | sudo tee -a "/etc/shells"
     chsh -s "${PREFIX}/bin/bash"
-fi;
+fi
 
 # Window manager
 brew install --quiet --cask rectangle
@@ -41,3 +41,4 @@ brew install --quiet wget
 brew install --quiet ffmpeg
 brew install --quiet nano
 brew install --quiet exiftool
+brew install --quiet imagemagick

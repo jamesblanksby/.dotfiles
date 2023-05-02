@@ -6,7 +6,9 @@ RUN apt-get update
 
 # persistent dependencies
 RUN docker-php-ext-install \
-	mysqli
+	mysqli \
+    pdo \
+    pdo_mysql
 
 # gd library support
 RUN apt-get install -y --no-install-recommends \
