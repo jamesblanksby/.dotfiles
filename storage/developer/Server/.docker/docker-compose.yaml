@@ -8,18 +8,19 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./storage/webproxy/conf.d:/etc/nginx/conf.d
       - certificate:/etc/nginx/certs:ro
       - /var/run/docker.sock:/tmp/docker.sock:ro
     container_name: developer.webproxy
   certificate:
-    image: sebastienheyd/self-signed-proxy-companion
+    image: jamesblanksby/nginx-proxy-selfsigned-companion
     restart: unless-stopped
     environment:
-      - NGINX_PROXY_CONTAINER=webproxy
+      - NGINX_PROXY_CONTAINER=developer.webproxy
     volumes:
       - certificate:/etc/nginx/certs:rw
       - /var/run/docker.sock:/var/run/docker.sock:ro
+    depends_on:
+      - webproxy
     container_name: developer.certificate
   php-7:
     build:
