@@ -132,7 +132,7 @@ echo "> Finder"
 # Finder
 
 # Set Finder sidebar width
-defaults write com.apple.finder SidebarWidth 125
+defaults write com.apple.finder SidebarWidth 128
 
 # Show Finder status bar
 defaults write com.apple.finder ShowStatusBar -bool true
