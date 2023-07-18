@@ -18,8 +18,8 @@ if [[ -z $ip ]]; then
 	exit
 fi
 
-# Attempt to get IP hostname
-hostname=$(ssh -q -o ConnectTimeout=1 -o ConnectionAttempts=1 root@"$ip" hostname)
+# Attempt to get hostname
+hostname=$(curl -sLI $domain | grep -i ^X-Server: | cut -d: -f2- | sed "s/^ *\(.*\).*/\1/")
 
 # Output results
 echo "[ IP ]" "$ip"
