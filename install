@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+
+function install() {
+    echo "Initialising setup. Please ensure you have reviewed the configuration files."
+
+    if [ -f ".env" ]; then
+        source ".env"
+    else
+        echo "Environment file (.env) not found."
+        exit 1
+    fi
+
+    superuser
+
+    for file in "$DOTFILES_DIR_ROOT/bootstrap/"*; do
+        [ -f "$file" ] && source "$file"
+    done
+
+    echo "Restart your shell or open a new terminal session to apply the changes."
+}
+
+function superuser() {
+    sudo -v || exit 1
+    while true; do 
+        sudo -n true
+        sleep 60
+        kill -0 "$$" || exit
+    done 2>/dev/null &
+}
+
+function linkdir() {
+    local source="$1"
+    local target="$2"
+    
+    mkdir -p "$target"
+
+    shopt -s dotglob
+    for file in "$source/"*; do
+        link "$file" "$target"
+    done
+    shopt -u dotglob
+}
+
+function link() {
+    local source="$1"
+    local target="$2/$(basename "$source")"
+
+    if [[ -f "$target" && ! -L "$target" ]]; then
+        backup "$target"
+    fi
+
+    sudo ln -s -f "$source" "$target"
+}
+
+function backup() {
+    local source="$1"
+    local target="$DOTFILES_DIR_BACKUP"
+
+    if [ ! -d "$target" ]; then
+        mkdir -p "$target"
+    fi
+
+    rsync -R "$source" "$target"
+}
+
+install

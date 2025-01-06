@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+linkdir "$DOTFILES_DIR_STORAGE/dotfiles" "$DOTFILES_DIR_HOME"

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+path="/Library/LaunchDaemons"
+name="com.jamesblanksby.loopback.plist"
+
+link "$DOTFILES_DIR_STORAGE/loopback/$name" "$path"
+
+sudo chown root:wheel "$path/$name" && sudo launchctl load "$path/$name"

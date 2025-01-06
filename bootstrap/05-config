@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+link "$DOTFILES_DIR_STORAGE/config/RectangleConfig.json" "$DOTFILES_DIR_HOME/Library/Application Support/Rectangle"
