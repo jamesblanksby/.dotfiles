@@ -50,6 +50,19 @@ services:
     volumes:
       - ./../:/var/www/html
     container_name: developer.php-8
+  mysql:
+    image: mysql:5.7
+    restart: unless-stopped
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+      - ./config/mysql/conf.d/my.cnf:/etc/mysql/conf.d/my.cnf
+    platform: linux/amd64
+    container_name: developer.mysql
 networks:
   default:
     name: webproxy

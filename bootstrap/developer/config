@@ -5,4 +5,3 @@
 echo "> Moving developer configuration files"
 
 cp "./config/developer/csscomb.json" "$HOME/.csscomb.json"
-cp "./config/developer/my.cnf" $([ -d "/opt/homebrew/etc" ] && echo "/opt/homebrew/etc/my.cnf" || echo "/usr/local/etc/my.cnf")
