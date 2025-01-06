@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+alias sudo="sudo"
+
+alias l="ls -hlp --color"
+alias la="ls -hlpa --color"
+alias ld="ls -hld --color */"
+
+alias hosts="sudo nano /etc/hosts"
+
+alias path="echo -e \"${PATH//:/\\n}\""

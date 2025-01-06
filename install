@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+
+function install() {
+    echo "🚀 Initialising setup…"
+
+    if [ -f ".env" ]; then
+        echo "🔑 Loading environment variables…"
+        source ".env"
+    else
+        echo "⛔️ Environment file (.env) not found."
+        exit 1
+    fi
+
+    echo "🔐 Requesting superuser access…"
+    superuser
+
+    echo "📂 Sourcing bootstrap files…"
+    for file in "$DOTFILES_DIR_ROOT/bootstrap/"*; do
+        [ -f "$file" ] && source "$file"
+    done
+
+    echo "✨ Setup complete!"
+    echo "🎉 Restart your shell or open a new terminal session to apply the changes."
+}
+
+function superuser() {
+    sudo -v || exit 1
+    while true; do 
+        sudo -n true
+        sleep 60
+        kill -0 "$$" || exit
+    done 2>/dev/null &
+}
+
+function linkdir() {
+    local source="$1"
+    local target="$2"
+    
+    if [[ -e "$target" && ! -L "$target" ]]; then
+        backup "$target"
+        rm -rf "$target"
+    fi
+
+    link "$source" "$target"
+}
+
+function linkfile() {
+    local source="$1"
+    local target="$2/$(basename "$source")"
+
+    if [[ -f "$target" && ! -L "$target" ]]; then
+        backup "$target"
+        rm -f "$target"
+    fi
+
+    link "$source" "$target"
+}
+
+function link() {
+    local source="$1"
+    local target="$2"
+
+    sudo ln -s -f "$source" "$target"
+}
+
+function backup() {
+    local source="$1"
+    local target="$DOTFILES_DIR_BACKUP"
+
+    if [ ! -d "$target" ]; then
+        mkdir -p "$target"
+    fi
+
+    rsync -R "$source" "$target"
+}
+
+install

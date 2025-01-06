@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+domain=$1
+
+if [[ -z $domain ]]; then 
+	echo "[ERRO] Empty domain input"
+	exit
+fi
+
+ip=$(dig +short "$domain" | tail -n1)
+
+if [[ -z $ip ]]; then 
+	echo "[ERRO] No reply from server"
+	exit
+fi
+
+hostname=$(curl -sLI $domain | grep -i ^X-Server: | cut -d: -f2- | sed "s/^ *\(.*\).*/\1/")
+
+echo "[ IP ]" "$ip"
+if [[ -n $hostname ]]; then 
+	echo "[HOST]" "$hostname"
+fi

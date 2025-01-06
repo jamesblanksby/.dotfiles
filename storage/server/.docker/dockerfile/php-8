@@ -1,0 +1,31 @@
+FROM php:8.1-apache
+
+RUN apt-get update
+
+RUN docker-php-ext-install \
+	mysqli \
+    pdo \
+    pdo_mysql
+
+RUN apt-get install -y --no-install-recommends \
+    libfreetype-dev \
+    libjpeg-dev \
+    libpng-dev \
+    libwebp-dev
+RUN docker-php-ext-configure \
+    gd --enable-gd --with-freetype --with-jpeg
+RUN docker-php-ext-install \
+    gd
+
+RUN a2enmod \
+	headers \
+	rewrite
+
+RUN { \
+    echo "error_log=/dev/stderr"; \
+    echo "log_errors=1"; \
+    echo "memory_limit=512M"; \
+    echo "output_buffering=4096"; \
+    echo "post_max_size=128M"; \
+    echo "upload_max_filesize=128M"; \
+} > "$PHP_INI_DIR/conf.d/dockerfile.ini"

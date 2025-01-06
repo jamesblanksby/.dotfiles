@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+if test ! "$(which brew)"; then
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fLsS https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+brew install \
+    composer \
+    docker-compose \
+    git \
+    nano \
+    node \
+    rsync \
+    wget \
+    yarn
+
+brew install --cask \
+    appcleaner \
+    docker \
+    figma \
+    firefox \
+    forklift \
+    google-chrome \
+    imageoptim \
+    postman \
+    rectangle \
+    slack
