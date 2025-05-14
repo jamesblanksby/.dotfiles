@@ -224,6 +224,10 @@
             "keyCode": 2,
             "modifierFlags": 786432
         },
+        "firstThreeFourths": {
+            "keyCode": 123,
+            "modifierFlags": 1835008
+        },
         "firstTwoThirds": {
             "keyCode": 14,
             "modifierFlags": 786432
@@ -240,6 +244,10 @@
             "keyCode": 5,
             "modifierFlags": 786432
         },
+        "lastThreeFourths": {
+            "keyCode": 124,
+            "modifierFlags": 1835008
+        },
         "lastTwoThirds": {
             "keyCode": 17,
             "modifierFlags": 786432
@@ -255,14 +263,6 @@
         "maximizeHeight": {
             "keyCode": 126,
             "modifierFlags": 917504
-        },
-        "nextDisplay": {
-            "keyCode": 124,
-            "modifierFlags": 1835008
-        },
-        "previousDisplay": {
-            "keyCode": 123,
-            "modifierFlags": 1835008
         },
         "restore": {
             "keyCode": 51,

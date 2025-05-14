@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+user="$1"
+server="$2"
+domain="$3"
+
+shift 3
+
+source="$PWD/"
+target="$user@$server:/srv/domain/$domain/root/"
+
+mirror \
+    --exclude=".git" \
+    --exclude=".gitignore" \
+    --exclude="*.sql" \
+    --exclude="composer.json" \
+    --exclude="composer.lock" \
+    --exclude="config_sample.php" \
+    --exclude="dev/" \
+    --exclude="lib/" \
+    --exclude="node_modules" \
+    --exclude="package.json" \
+    --exclude="phpstan.neon" \
+    --exclude="README.md" \
+    --exclude="yarn.lock" \
+    "$source" \
+    "$target" \
+    "$@"

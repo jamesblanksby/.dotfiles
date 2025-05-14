@@ -12,6 +12,9 @@
         [
             "$variable",
             "all",
+            "container",
+            "container-name",
+            "container-type",
             "position",
             "inset",
             "top",
@@ -46,6 +49,7 @@
             "overflow-y",
             "scroll-snap-type",
             "scroll-snap-align",
+            "scroll-snap-stop",
             "scroll-padding",
             "scroll-padding-top",
             "scroll-padding-right",
@@ -290,8 +294,8 @@
             "-webkit-line-clamp",
             "-moz-osx-font-smoothing",
             "-webkit-user-drag",
-            "$include",
             "$extend",
+            "$include",
             "$import",
             "$interpolation"
         ]
