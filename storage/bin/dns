@@ -7,7 +7,7 @@ if [[ -z $domain ]]; then
 	exit
 fi
 
-ip=$(dig +short "$domain" | tail -n1)
+ip=$(dig +short $domain | tail -n1)
 
 if [[ -z $ip ]]; then 
 	echo "[ERRO] No reply from server"
@@ -16,7 +16,7 @@ fi
 
 hostname=$(curl -sLI $domain | grep -i ^X-Server: | cut -d: -f2- | sed "s/^ *\(.*\).*/\1/")
 
-echo "[ IP ]" "$ip"
+echo "[ IP ] $ip"
 if [[ -n $hostname ]]; then 
-	echo "[HOST]" "$hostname"
+	echo "[HOST] $hostname"
 fi

@@ -55,6 +55,7 @@
             "scroll-padding-right",
             "scroll-padding-bottom",
             "scroll-padding-left",
+            "scroll-behavior",
             "overscroll-behavior",
             "overscroll-behavior-x",
             "overscroll-behavior-y",
