@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 
-uuidgen | tr "A-Z" "a-z" | tr -d "\n" | tee >(pbcopy)
-echo ""
+count=${1:-1}
+
+for ((i = 0; i < count; i++)); do
+    uuidgen | tr "A-Z" "a-z"
+done | tee >(pbcopy)
